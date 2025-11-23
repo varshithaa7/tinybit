@@ -4,7 +4,6 @@
 
 # 🌀 TinyBit — Cloud-Native URL Shortener
 
-*A simple yet impressive cloud project built using Flask, Redis, Docker, and Kubernetes.*
 
 TinyBit is a lightweight microservice that shortens long URLs into tiny, shareable links.
 This project demonstrates real-world cloud concepts such as containerized services, environment configuration, caching, and Kubernetes orchestration.
