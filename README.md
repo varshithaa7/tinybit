@@ -157,28 +157,6 @@ Redirects the user to the original URL.
 
 ---
 
-# 🗑 Cleanup
-
-Remove Kubernetes resources:
-
-```bash
-kubectl delete namespace tinybit
-```
-
-Stop Docker containers:
-
-```bash
-docker stop tinybit tiny-redis
-docker rm tinybit tiny-redis
-```
-
-Stop Minikube:
-
-```bash
-minikube stop
-```
-
----
 
 # 📌 What You Learn from This Project
 
