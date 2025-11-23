@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tinybit-service
+  namespace: tinybit
+spec:
+  selector:
+    app: tinybit-backend
+  ports:
+    - port: 5000        # Service port inside the cluster
+      targetPort: 5000  # Container port exposed by your Flask app
+      protocol: TCP
+  type: ClusterIP
