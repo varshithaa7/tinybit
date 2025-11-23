@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tinybit-config
+  namespace: tinybit
+data:
+  BASE_URL: "http://tinybit.local/"

@@ -1,0 +1,44 @@
+# k8s/tinybit-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tinybit
+  namespace: tinybit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tinybit
+  template:
+    metadata:
+      labels:
+        app: tinybit
+    spec:
+      containers:
+      - name: tinybit
+        image: mlvarshu/tinybit-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: REDIS_HOST
+          value: "redis"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: BASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: tinybit-config
+              key: BASE_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tinybit
+  namespace: tinybit
+spec:
+  selector:
+    app: tinybit
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: ClusterIP

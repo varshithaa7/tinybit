@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tinybit-ingress
+  namespace: tinybit
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: tinybit.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tinybit-service
+            port:
+              number: 5000
