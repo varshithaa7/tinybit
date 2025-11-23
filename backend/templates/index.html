@@ -1,0 +1,13 @@
+<!-- backend/templates/index.html -->
+<!doctype html>
+<html>
+<head><title>TinyBit</title></head>
+<body>
+  <h1>TinyBit URL Shortener</h1>
+  <form action="/shorten" method="post">
+    <input name="url" placeholder="https://example.com" size="60">
+    <button type="submit">Shorten</button>
+  </form>
+  <p>Use the form or call POST /shorten with JSON {"url": "..."}.</p>
+</body>
+</html>
